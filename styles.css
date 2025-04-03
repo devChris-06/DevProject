@@ -1,0 +1,41 @@
+body {
+    background-color: #ff5733;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.intro {
+    font-weight: bold;
+}
+
+#header {
+    background-color: gray;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: solid 5px black;
+    margin: 10px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.center-text {
+    text-align: center;
+}
+
+div.warning {
+    background-color: gold;
+}

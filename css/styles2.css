@@ -1,0 +1,349 @@
+/*
+COME FUNZIONA CSS
+
+selector {
+  property: value;
+}
+
+CI SONO 3 ELEMENTI PRINCIPALI PER CONOSCERE LE BASI DI CSS
+
+SELETTORE: Elemento che verrà stilizzato
+property: Proprietà che possa essere un font di testo, colore, colore sfondo, etc
+value: Valore che viene assegnato per quanti pixel o scelta di colore
+
+
+SELETTORE ID
+
+#elementId {
+  property: value;
+}
+
+Serve ad indicare un'oggetto unico presente nel doumento
+
+ESEMPIO:
+
+#myId {
+  color: blue;
+  font-size: 20px;
+}
+
+SELETTORE CLASSE
+
+.classname {
+  property: value;
+}
+
+Serve ad indicare un gruppo di elementi che vengono stilizzati contemporaneamente
+
+ESEMPIO:
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+
+SELETTORE ATTRIBUTO
+
+[element[attribute="value"]]
+
+Serve ad indicare un elemento specifico del documento (come input, immagini, anchor, etc) e stilizzarlo
+
+ESEMPIO:
+
+input[type="text"] {
+  border: 1px solid #000;
+}
+
+a[rel="nofollow"] {
+  color: red;
+}
+
+img[alt="logo"] {
+  width: 100px;
+}
+
+COLORI
+
+p {
+  color: #ff5733;
+}
+
+ALLINEAMENTO DEI TESTI
+
+h1 {
+  text-align: center;
+}
+
+MARGINI: 
+
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 10px;
+margin-left: 20px;
+
+PRO TIP
+
+
+- All sides -
+margin: 10px;
+
+
+- Top and bottom | Left and right -
+margin: 10px 20px;
+
+
+- Top | Right | Bottom | Left (clockwise) -
+margin: 10px 20px 10px 20px;
+
+
+- Negative margins can be used to overlap elements -
+.overlap {
+  margin-top: -20px;
+}
+
+ALLINEAMENTI DEGLI ELEMENTI
+
+- Center a block element horizontally -
+
+.center-block {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+- Center an inline element -
+
+.center-inline {
+  text-align: center;
+}
+
+- Center a flex container's items -
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+- Center a grid container's items -
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+PADDING
+
+- Individual sides -
+
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 10px;
+padding-left: 20px;
+
+PRO TIP
+
+- All sides -
+padding: 10px;
+
+- Top and bottom | Left and right -
+padding: 10px 20px;
+
+- Top | Right | Bottom | Left (clockwise) -
+padding: 10px 20px 10px 20px;
+
+
+ESEMPI
+
+- Card-like elements -
+
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+- Navigation items -
+
+.nav-item {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+- Form inputs -
+
+input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+- With box-sizing: content-box (default) -
+.element {
+  width: 200px;
+  padding: 20px;
+
+- Total width = 200px + 40px (padding) = 240px -
+}
+
+- With box-sizing: border-box -
+.element {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+
+- Total width remains 200px, padding is included -
+}
+
+
+BORDI
+
+element {
+  border-width: 2px;
+  border-style: dashed;
+  border-color: red;
+}
+
+OMBRE
+
+h1 {
+  text-shadow: 2px 2px 5px gray;
+}
+
+ESEMPI
+
+.card {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+SFUMATURA
+
+TIPO LINEARE
+background-color: linear-gradient(to right, red, yellow);
+
+TIPO RADIALE
+background: radial-gradient(circle, blue, green);
+background-size: cover;
+background-repeat: no-repeat;
+
+
+MEDIA-QUERIES
+
+@media screen and (max-width: 768px) {
+  - Styles for screens smaller than 768px -
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+I BREAKPOINTS
+
+ - Mobile devices -
+@media screen and (max-width: 480px) {
+  - Mobile styles -
+}
+
+-  Tablets -
+@media screen and (max-width: 768px) {
+  - Tablet styles -
+}
+
+-  Laptops -
+@media screen and (max-width: 1024px) {
+  - Laptop styles -
+}
+
+-  Desktop -
+@media screen and (min-width: 1025px) {
+  - Desktop styles -
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  - Styles for screens between 768px and 1024px -
+}
+
+@media screen and (orientation: landscape) {
+  - Styles for landscape orientation -
+}
+
+@media print {
+  - Styles for printed pages -
+}
+
+@media screen {
+  - Styles for screen display -
+}
+
+@media screen and (min-resolution: 2dppx) {
+  - Styles for high-resolution displays -
+}
+
+BEST PRACTICE: MOBILE FIRST
+È una delle migliori pratiche che si possano fare, consiste nel utilizzare gli elementi e stilizzare
+inizialmente dal schermo più piccolo (telefono) fino agli schermi più grandi (desktop, tv, etc)
+
+- Base styles for mobile -
+.container {
+  width: 100%;
+  padding: 15px;
+}
+
+- Tablet and up -
+@media screen and (min-width: 768px) {
+  .container {
+    width: 750px;
+    padding: 30px;
+  }
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 1rem; - Instead of fixed pixels -
+    padding: 1em; - Instead of fixed pixels -
+  }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+*/
+
+
+
+/*
+SELETTORE UNIVERSALE
+È utilissimo e serve a stilizzare tutto il documento
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  /* Centers the heading text within its container */
+}
+
+p {
+  color: red;
+  letter-spacing: 2px;
+  /* Increases the spacing between characters in paragraph text */
+  word-spacing: 4px;
+  /* Increases the space between words */
+}
+
+div {
+  background-image: url("background.jpg");
+  /* Sets an image as the background */
+  background-repeat: no-repeat;
+  /* Ensures the image does not repeat */
+  background-position: center top;
+  /* Positions the image at the top center of the element */
+}
